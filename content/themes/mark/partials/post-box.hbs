@@ -1,0 +1,30 @@
+<div class="post-waterfall" id="masonry">
+    {{#foreach posts}}
+    <article class="{{post_class}} cell">
+        <header class="post-header">
+            <div class="image-holder">
+                <img src="{{image}}" title="{{title}}" />
+            </div>
+            <h2 class="post-title">
+                <strong> <a href="{{url}}">{{{title}}}</a></strong>
+            </h2>
+        </header>
+        <div class="post-meta">
+            <span class="time" datetime="{{date format="YYYY MM DD"}}" class="date">{{date format="YYYY-MM-DD"}}</span>
+            {{#if tags}}
+            <span class="tags" data-info="goto-tag">
+                <i class="fa fa-tag fa-1x"> </i> {{tags}}
+            </span>
+            {{/if}}
+        </div>
+
+        <section class="post-excerpt">
+            {{excerpt characters="40"}}&hellip;
+        </section>
+        <footer class="post-extra">
+            <a class="read-more-meta" data-info="goto-post" href="{{url}}" ><i class="fa fa-align-center fa-1x"></i> 继续全文</a>
+        </footer>
+    </article>
+    {{/foreach}}
+</div>
+{{"pagination"}}

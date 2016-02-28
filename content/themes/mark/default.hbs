@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+    <!-- <link href="//cdn.bootcss.com/rainbow/1.2.0/themes/github.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/hybrid.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+
+<body class="{{body_class}} {{#is 'index, tag, author'}}user{{/is}} {{#is 'post'}}{{#unless post.image}}noimage{{/unless}}{{/is}}"
+      "{{#if @blog.cover}}" style="background: url({{@blog.cover}}) fixed repeat center top #f0f0f0; {{/if}}">
+    {{! Everything else gets inserted here }}
+
+    <header role="banner">
+        <div class="wrap">
+            <a href="{{@blog.url}}">
+                {{#if @blog.logo}}
+                    <div class="logo-wrap">
+                        <span class="logo" style="background-image: url('{{@blog.logo}}');">{{@blog.title}}</span>
+                    </div>
+                {{/if}}
+                <span class="site-title">{{@blog.title}}</span>
+            </a>
+
+            <div class="f-right">
+                {{> social}}
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content {{#is 'post'}} post-page{{/is}}" >
+        <div class="main-content-left f-left">
+            {{{body}}}
+        </div>
+        <div class="main-content-right f-right">
+            {{> "sidebar"}}
+        </div>
+        <div style="clear:both"></div>
+    </div>
+
+
+    <!-- footer -->
+    <!-- <footer class="site-footer clearfix">
+         <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a> &amp; <a href="http://www.ghostchina.com">GhostChina</a></section>
+    </footer> -->
+
+    <!-- <script>
+
+        {{#is 'post'}}
+            function get_text(el) {
+                ret = "";
+                var length = el.childNodes.length;
+                for(var i = 0; i < length; i++) {
+                    var node = el.childNodes[i];
+                    if(node.nodeType != 8) {
+                        ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
+                    }
+                }
+                return ret;
+            }
+            function reading_time () {
+                var post_content = document.getElementById('js-post-content');
+                if (post_content) {
+                    var words = get_text(post_content),
+                        count = words.split(/\s+/).length,
+                        read_time = Math.ceil((count / 150)),
+                        read_time_node = document.createTextNode(read_time + ' min read');
+                    document.getElementById('js-reading-time').appendChild(read_time_node);
+                }
+            }
+        {{/is}}
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+            {{#is 'post'}}
+            reading_time();
+            {{/is}}
+        }
+    </script> -->
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    <!-- {{#is 'post'}}
+        <script>
+            $(function(){
+                var share_modal = $("#share_modal"),
+                    update_social_links = true;
+
+                $("#btn_share").click(function(){
+                    var that = $(this);
+                    share_modal.fadeIn(200);
+                    return false;
+                });
+
+                share_modal.click(function(e){
+                    if (e.target.className == "wrap" || e.target.id == "share_modal") {
+                        share_modal.fadeOut(200);
+                    }
+                    return false;
+                });
+
+                share_modal.find("div.inner > header > a.close").click(function(){
+                    share_modal.fadeOut(200);
+                    return false;
+                });
+            });
+        </script>
+    {{/is}} -->
+    <img id="go2top" src="/assets/images/top_arrow.png" alt="go2top" style="display: inline;">
+    <script type="text/javascript" src="{{asset "js/lib/jquery-2.1.3.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/lib/jquery-imagesloaded.js"}}"></script>
+    <script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+    <script src="//cdn.bootcss.com/jquery.sticky/1.0.3/jquery.sticky.min.js"></script>
+    <!-- <script src="//cdn.bootcss.com/masonry/4.0.0/masonry.pkgd.min.js"></script> -->
+    <script type="text/javascript" src="{{asset "js/lib/sea.js"}}"></script>
+    <script src="{{asset "js/main.js"}}"></script>
+    <script></script>
+</body>
+</html>

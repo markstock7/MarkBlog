@@ -1,0 +1,68 @@
+{{!< default}}
+
+{{#post}}
+    <article class="paper">
+        <div class="article-wrap">
+            <header class="article-header">
+                <i class="fa fa-file-text-o fa-2x"></i>
+                <h1 class="title">{{title}}</h1>
+                <time class="article-header-time" datetime="{{date format='YYYY-MM-DD'}}">
+                    <span class="day">{{date format="DD"}}</span>
+                    <span class="month">{{date format="YYYY年MM月"}}</span>
+                </time>
+            </header>
+            <span class="count" id="js-reading-time"></span>
+            {{#if image}}
+            <section class="article-gallery">
+                <div class="article-gallery-photos">
+                    <img src="{{image}}" itemprop="image" >
+                </div>
+            </section>
+            {{/if}}
+
+            <div class="article-content" id="js-post-content">
+                {{content}}
+            </div>
+
+            <footer class="article-footer clearfix">
+                <div class="categories">
+                    <!-- <a href="/categories/tools/" title="Tools">Tools</a> -->
+                </div>
+                {{#if tags}}
+                    <div class="tags">
+                    <i class="fa fa-tags"></i>
+                    {{tags separator=""}}
+                    </div>
+                {{/if}}
+
+                <!-- <menu>
+                    <a href="" id="btn_share" class="btn" title="分享">
+                        <span aria-hidden="true" data-icon="S"></span>
+                        <strong>分享</strong>
+                    </a>
+                </menu> -->
+            </footer>
+
+        </div>
+    </article>
+
+
+    <!-- <div id="share_modal">
+        <div class="wrap">
+            <div class="inner">
+                <header>
+                    分享
+                    <a href="" class="close" title="Close">&times;</a>
+                </header>
+
+                <div class="roon-share-links">
+                {{! 以下代码使用的是百度分享(http://share.baidu.com/)，如需自定义，请自行到百度分享上定制并将代码粘贴到这里。}}
+                <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+
+                <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+                {{! 百度分享代码结束}}
+                </div>
+            </div>
+        </div>
+    </div> -->
+{{/post}}
