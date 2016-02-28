@@ -27,8 +27,8 @@ url: 'http://115.28.91.178/',
             client: 'mysql',
             connection: {
                 host: '127.0.0.1',
-                user : 'root',
-                password: 'markdewow1994',
+                user : 'med_test',
+                password: 'med_test',
                 database: 'ghost',
                 charset: 'utf8'
 
@@ -63,8 +63,8 @@ url: 'http://115.28.91.178/',
             client: 'mysql',
             connection: {
                 host: '127.0.0.1',
-                user : 'root',
-                password: 'markdewow1994',
+                user : 'med_test',
+                password: 'med_test',
                 database: 'ghost',
                 charset: 'utf8'
 
