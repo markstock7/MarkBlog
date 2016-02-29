@@ -18,8 +18,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
     <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
-    <!-- <link href="//cdn.bootcss.com/rainbow/1.2.0/themes/github.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/hybrid.min.css">
+    <link href="//cdn.bootcss.com/uikit/2.25.0/css/uikit.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset "css/hybird.min.css"}}">
     <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 
     {{! Ghost outputs important style and meta data with this tag }}
@@ -29,8 +29,9 @@
 <body class="{{body_class}} {{#is 'index, tag, author'}}user{{/is}} {{#is 'post'}}{{#unless post.image}}noimage{{/unless}}{{/is}}"
       "{{#if @blog.cover}}" style="background: url({{@blog.cover}}) fixed repeat center top #f0f0f0; {{/if}}">
     {{! Everything else gets inserted here }}
+    <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
 
-    <header role="banner">
+    <header role="banner" class="">
         <div class="wrap">
             <a href="{{@blog.url}}">
                 {{#if @blog.logo}}
@@ -47,14 +48,13 @@
         </div>
     </header>
 
-    <div class="main-content {{#is 'post'}} post-page{{/is}}" >
-        <div class="main-content-left f-left">
+    <div class="{{#is 'post'}} post-page{{/is}} uk-grid main-content">
+        <div class="uk-width-medium-3-4 uk-row-first">
             {{{body}}}
         </div>
-        <div class="main-content-right f-right">
+        <div class="uk-width-medium-1-4">
             {{> "sidebar"}}
         </div>
-        <div style="clear:both"></div>
     </div>
 
 
@@ -64,52 +64,6 @@
          <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a> &amp; <a href="http://www.ghostchina.com">GhostChina</a></section>
     </footer> -->
 
-    <!-- <script>
-
-        {{#is 'post'}}
-            function get_text(el) {
-                ret = "";
-                var length = el.childNodes.length;
-                for(var i = 0; i < length; i++) {
-                    var node = el.childNodes[i];
-                    if(node.nodeType != 8) {
-                        ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
-                    }
-                }
-                return ret;
-            }
-            function reading_time () {
-                var post_content = document.getElementById('js-post-content');
-                if (post_content) {
-                    var words = get_text(post_content),
-                        count = words.split(/\s+/).length,
-                        read_time = Math.ceil((count / 150)),
-                        read_time_node = document.createTextNode(read_time + ' min read');
-                    document.getElementById('js-reading-time').appendChild(read_time_node);
-                }
-            }
-        {{/is}}
-
-        function no_schema_links () {
-            var links = document.querySelectorAll('.js-remove-domain-schema');
-            if (links) {
-                for (i = 0; i < links.length; ++i) {
-                    var link = links[i],
-                        text = link.innerHTML,
-                        no_schema = text.replace(/.*?:\/\//g, "");
-                    link.innerHTML = no_schema;
-                }
-            }
-        }
-
-        window.onload = function () {
-            no_schema_links();
-
-            {{#is 'post'}}
-            reading_time();
-            {{/is}}
-        }
-    </script> -->
 
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
@@ -140,6 +94,7 @@
             });
         </script>
     {{/is}} -->
+    </div>
     <img id="go2top" src="/assets/images/top_arrow.png" alt="go2top" style="display: inline;">
     <script type="text/javascript" src="{{asset "js/lib/jquery-2.1.3.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/lib/jquery-imagesloaded.js"}}"></script>
@@ -148,6 +103,5 @@
     <!-- <script src="//cdn.bootcss.com/masonry/4.0.0/masonry.pkgd.min.js"></script> -->
     <script type="text/javascript" src="{{asset "js/lib/sea.js"}}"></script>
     <script src="{{asset "js/main.js"}}"></script>
-    <script></script>
 </body>
 </html>

@@ -50,7 +50,7 @@
 
 /* 链接样式 */
 a {
-    color: @main-color;
+    color: @main-color !important;
     text-decoration: none;
     outline: none;
 
@@ -101,6 +101,7 @@ hr {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
+    margin:0 !important;
 }
 
 .loaderholder {
@@ -206,7 +207,23 @@ body::-webkit-selection, body::-moz-selection, body::-o-selection, body::selecti
 .f-left { float: left; }
 
 /* header 样式 */
+@media screen and (min-width:486px){
+    header {
+        display: none;
+    }
+}
+@media screen and (max-width:486px){
+    header {
+        .wrap {
+            .navigation--social {
+                display: none
+            }
+        }
+    }
+}
+
 header {
+    margin-bottom:20px;
     .wrap {
         .logo-wrap {
             float: left;
@@ -240,14 +257,8 @@ header {
 
 
 .main-content {
-    width: 1080px;
-    margin: 0 auto;
-    .main-content-left {
-        width: 770px;
-    }
-    .main-content-right{
-        width: 280px;
-    }
+    // width: 1080px;
+    margin-top:40px;
 }
 
 // 文章列表
@@ -331,9 +342,6 @@ article {
         .article-header {
             color: #888;
             .fa {
-                position: absolute;
-                top: 23px;
-                left: 26px;
                 width: 32px;
                 height: 32px;
                 margin-right: 25px;
@@ -343,13 +351,13 @@ article {
                 font-weight: normal;
                 line-height: 36px;
                 margin-top: -2px;
-                padding: 0 80px 0 32px;
                 font-size: 1.6em;
                 font-weight: bolder;
+                margin-right: 70px !important;
             }
             .article-header-time {
                 position: absolute;
-                top: 10px;
+                top: 20px;
                 right: 24px;
                 width: 80px;
                 font-style: italic;
