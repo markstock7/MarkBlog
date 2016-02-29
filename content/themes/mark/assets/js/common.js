@@ -31,7 +31,7 @@ define(function (require, exports, module) {
 
     mySite.initSubtitles(scrollSpy);
 
-    if($(body).hasClass('post-template')) {
+    if($('body').hasClass('post-template')) {
         mySite.initDuoShuo();
     }
 
