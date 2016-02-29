@@ -31,6 +31,10 @@ define(function (require, exports, module) {
 
     mySite.initSubtitles(scrollSpy);
 
+    if($(body).hasClass('post-template')) {
+        mySite.initDuoShuo();
+    }
+
 });
 
 // 初始化fancybox
@@ -204,3 +208,15 @@ mySite.initSubtitles = function initSubtitle(scrollSpy) {
         });
     }
 };
+
+mySite.initDuoShuo = function initDuoShuo() {
+    var duoshuoQuery = {short_name:"marstockblog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+}
