@@ -82,7 +82,6 @@ h5,
 h6 {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
-  margin: 0 !important;
 }
 .loaderholder {
   background: #fff;
@@ -139,98 +138,8 @@ body > header {
   margin: 20px auto 35px auto;
 }
 /** 属性重置 */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-}
 html {
   line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
 }
 table {
   border-collapse: collapse;
@@ -415,6 +324,10 @@ article.list {
   border-top: 2px solid #d35c5c;
   -webkit-box-shadow: 1px 2px 3px #dddddd;
   box-shadow: 1px 2px 3px #dddddd;
+}
+article.paper p,
+article.list p {
+  text-indent: 2em;
 }
 article.paper .article-wrap,
 article.list .article-wrap,
@@ -609,11 +522,6 @@ article.list {
   transition: max-height 0.3s ease;
   font-size: .9em;
   padding: 15px 20px;
-}
-pre {
-  position: relative;
-  overflow: hidden;
-  margin: 15px -30px;
 }
 code {
   display: block;
