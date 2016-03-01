@@ -1,6 +1,4 @@
-define(function (require, exports, module) {
-    'use strict';
-
+$function() {
     var guid = 0;
 
     function ScrollSpy(options) {
@@ -137,11 +135,4 @@ define(function (require, exports, module) {
         options.element = element;
         return new ScrollSpy(options);
     }
-
-    // default settings
-    scrollSpy.defaults = ScrollSpy.defaults;
-
-    // Exports
-    // -------
-    module.exports = scrollSpy;
 });

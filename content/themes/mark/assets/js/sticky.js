@@ -1,5 +1,4 @@
-define(function (require, exports, module) {
-    'use strict';
+$(function() {
     var undefined,
         doc = $(document),
         stickyPrefix = ['-webkit-', '-ms-', '-o-', '-moz-', ''],
