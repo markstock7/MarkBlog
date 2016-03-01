@@ -68,43 +68,14 @@
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
 
-    <!-- {{#is 'post'}}
-        <script>
-            $(function(){
-                var share_modal = $("#share_modal"),
-                    update_social_links = true;
-
-                $("#btn_share").click(function(){
-                    var that = $(this);
-                    share_modal.fadeIn(200);
-                    return false;
-                });
-
-                share_modal.click(function(e){
-                    if (e.target.className == "wrap" || e.target.id == "share_modal") {
-                        share_modal.fadeOut(200);
-                    }
-                    return false;
-                });
-
-                share_modal.find("div.inner > header > a.close").click(function(){
-                    share_modal.fadeOut(200);
-                    return false;
-                });
-            });
-        </script>
-    {{/is}} -->
     </div>
     <img id="go2top" src="/assets/images/top_arrow.png" alt="go2top" style="display: inline;">
     <script type="text/javascript" src="{{asset "js/lib/jquery-2.1.3.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/lib/jquery-imagesloaded.js"}}"></script>
     <script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
     <script src="//cdn.bootcss.com/jquery.sticky/1.0.3/jquery.sticky.min.js"></script>
-    <!-- <script src="//cdn.bootcss.com/masonry/4.0.0/masonry.pkgd.min.js"></script> -->
-    <!-- <script type="text/javascript" src="{{asset "js/lib/sea.js"}}"></script> -->
     <script type="text/javascript" src="{{asset "js/scrollSpy.js"}}"></script>
     <script src="//cdn.bootcss.com/jquery-infinitescroll/2.0b2.120520/jquery.infinitescroll.min.js"></script>
-    <!-- <script type="text/javascript" src="{{asset "js/lib/highlight.min.js"}}"></script> -->
     <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
     <script type="text/javascript" src="{{asset "js/common.js"}}"></script>
 
