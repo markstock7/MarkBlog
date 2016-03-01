@@ -4,13 +4,7 @@
  */
 
 var mySite = {};
-define(function (require, exports, module) {
-    'use strict';
-    require('highlight');
-    require('infinitescroll');
-    var scrollSpy = require('scrollSpy');
-
-
+$(function () {
     // 初始化fancybox
     mySite.initFancyBox();
 

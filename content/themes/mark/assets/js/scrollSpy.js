@@ -1,4 +1,4 @@
-$function() {
+
     var guid = 0;
 
     function ScrollSpy(options) {
@@ -135,4 +135,3 @@ $function() {
         options.element = element;
         return new ScrollSpy(options);
     }
-});
