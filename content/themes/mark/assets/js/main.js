@@ -13,5 +13,4 @@ seajs.config({
 
 seajs.use([
     '/assets/js/common',
-    '/assets/js/toc'
 ]);
