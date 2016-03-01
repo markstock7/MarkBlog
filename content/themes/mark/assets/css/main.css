@@ -523,6 +523,11 @@ article.list {
   font-size: .9em;
   padding: 15px 20px;
 }
+pre {
+  position: relative;
+  overflow: auto;
+  margin: 15px -30px !important;
+}
 code {
   display: block;
   padding: 12px 24px;
@@ -550,6 +555,7 @@ code.has-numbering {
   font-size: 1.0em;
   color: #fff;
   background: #1D1F21;
+  margin: 0;
 }
 #go2top {
   position: fixed;
