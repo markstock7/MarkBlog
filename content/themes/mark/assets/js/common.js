@@ -82,8 +82,7 @@ mySite.initGallery = function initGallery() {
             loading = false;
         });
 
-        $this
-            .on('click', '.prev', function () {
+        $this.on('click', '.prev', function () {
                 if (!loading) {
                     var next = (current - 1) % photoCount;
                     loading = true;
