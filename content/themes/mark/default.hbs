@@ -17,14 +17,14 @@
     <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/uikit/2.25.0/css/uikit.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset "css/hybrid.min.css"}}" />
-    <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"/> -->
 
     {{ghost_head}}
 </head>
 
 <body class="{{body_class}} {{#is 'index, tag, author'}}user{{/is}} {{#is 'post'}}{{#unless post.image}}noimage{{/unless}}{{/is}}"
       "{{#if @blog.cover}}" style="background: url({{@blog.cover}}) fixed repeat center top #f0f0f0; {{/if}}">
-    {{! Everything else gets inserted here }}
+
     <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
 
     <header role="banner" class="">
