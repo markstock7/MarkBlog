@@ -167,37 +167,33 @@ mySite.initSubtitles = function initSubtitle(scrollSpy) {
     if($('.main-content').hasClass('post-page')) {
         var subtitles = $('.article-content h2'),
             tmpl = '',
-            $toc = $('#topic-wrap .toc');
+            $toc = $('#topic-wrap .toc'),
+            anchor;
         subtitles.each(function(index, subtitle) {
             subtitle = $(subtitle);
-            tmpl += '<li class="toc-item toc-level-2"><a class="toc-link" href="#'+subtitle.attr('id')+'"><span class="toc-number">'+index+'. </span><span class="toc-text">'+subtitle.text()+'</span></a></li>';
-            subtitle.prepend('<a href="#'+subtitle.attr('id')+'" class="headerlink" title="'+subtitle.text()+'"></a>')
+            tmpl += '<li class="toc-item toc-level-2"><a class="toc-link" href="#'+subtitle.text()+'"><span class="toc-number">'+index+'. </span><span class="toc-text">'+subtitle.text()+'</span></a></li>';
+            subtitle.prepend('<a href="#'+subtitle.text()+'" class="headerlink" title="'+subtitle.text()+'"></a>');
+            subtitle.attr('id', subtitle.text());
         });
         $(tmpl).appendTo($toc);
 
         $('#topic-wrap').sticky({  //指定的侧边栏目
-            topSpacing: 58, //距离页面顶部的距离，可自行设置
+            topSpacing: 8, //距离页面顶部的距离，可自行设置
         });
 
         var $progress = $(CLASS_PROGRESS),
             nativeSpy = scrollSpy($(CLASS_TOC)),
             wHeight;
 
-        function getHeight() {
-            wHeight = $(document.body).height() - $(window).height();
-        }
-
         function setProgress() {
+            wHeight = $(document.body).height() - $(window).height();
             var percent = Math.max(0, Math.min(1, $(window).scrollTop() / wHeight));
             $progress.css('width', percent * 100 + '%');
         }
 
         $(function () {
-            getHeight();
             setProgress();
-
             $(window).scroll(setProgress);
-            $(window).scroll(getHeight);
         });
     }
 };

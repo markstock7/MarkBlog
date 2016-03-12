@@ -270,7 +270,6 @@ h6 {
 /* 顶部线条 */
 body {
   border-top: 4px solid #d35c5c !important;
-  text-rendering: optimizeLegibility;
 }
 body > header {
   width: 1080px;
@@ -319,7 +318,6 @@ summary {
   display: block;
 }
 body {
-  -webkit-font-smoothing: antialiased;
   text-shadow: 0 0 1px transparent;
   color: #21272d;
 }
@@ -338,11 +336,6 @@ body::selection {
   float: left;
 }
 /* header 样式 */
-@media screen and (min-width: 486px) {
-  header {
-    display: none;
-  }
-}
 @media screen and (max-width: 486px) {
   header .wrap .navigation--social {
     display: none;
@@ -413,7 +406,6 @@ article.cell .post-title {
   font-weight: bolder;
   font-size: 18px;
   word-wrap: break-word;
-  text-rendering: optimizeLegibility;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   /* Firefox */
@@ -660,7 +652,7 @@ pre {
   -moz-tab-size: 4;
   tab-size: 4;
   position: relative;
-  overflow: auto;
+  overflow: hidden !important;
   padding: 0 !important;
   margin: 15px -30px !important;
 }
@@ -692,6 +684,7 @@ code.has-numbering {
   color: #fff;
   background: #1D1F21;
   margin: 0;
+  list-style: none;
 }
 #go2top {
   position: fixed;
@@ -748,6 +741,10 @@ code.has-numbering {
 }
 .toc-wrap .toc-tree {
   padding: 12px 0 !important;
+}
+.toc-wrap .toc-tree .toc {
+  list-style: none;
+  margin-left: 10px;
 }
 .toc-wrap .toc-tree li a {
   color: #333;
