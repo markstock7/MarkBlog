@@ -42,45 +42,11 @@ a {
     .transition-property(background-color, color);
     .transition-duration(0.2s);
 
-    &:hover { color: #21272d };
-    &:active { outline: none }
+    &:hover { color: #21272d; text-decoration: none}
+    &:active { outline: none; text-decoration:none;}
+    &:link {text-decoration: none;}
+    &:visited {text-decoration: none}
 }
-
-/** 横线样式 */
-hr {
-    border: none;
-    height: 1px;
-    margin: 0;
-    padding: 0;
-    background-color: #e5e5e5
-}
-
-/** 按钮样式 */
-// .btn {
-//     display: -moz-inline-stack;
-//     display: inline-block;
-//     vertical-align: middle;
-//     *vertical-align: auto;
-//     zoom: 1;
-//     *display: inline;
-//     padding: 20px 30px;
-//     margin: 0;
-//     font-family: "Helvetica Neue", "Helvetica-Neue", helvetica, sans-serif;
-//     background-color: #909396;
-//     color: #fff;
-//     font-weight: bold;
-//     -webkit-border-radius: 50px;
-//     -moz-border-radius: 50px;
-//     -ms-border-radius: 50px;
-//     -o-border-radius: 50px;
-//     border-radius: 50px;
-//     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-//
-//     &:hover {
-//         background-color: #21272d;
-//         color: #fff
-//     }
-// }
 
 // 标题样式
 h1, h2, h3, h4, h5, h6 {
@@ -141,13 +107,6 @@ body>header {
     margin: 20px auto 35px auto;
 }
 
-/** 属性重置 */
-// html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-//     margin: 0;
-//     padding: 0;
-//     border: 0;
-//     vertical-align: baseline
-// }
 html { line-height: 1 }
 // ol, ul { list-style: none }
 table {
@@ -168,16 +127,9 @@ a img { border: none }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block }
 
 body {
-    height: 100%;
-    max-height: 100%;
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.75em;
-    color: #21272d;
     -webkit-font-smoothing: antialiased;
     text-shadow: 0 0 1px transparent;
     color: #21272d;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* 选中色 */
@@ -327,19 +279,19 @@ article {
         }
         .article-header {
             color: #888;
-            .fa {
+            .icon {
                 width: 32px;
                 height: 32px;
-                margin-right: 25px;
                 color: #888;
+                font-size: 30px;
             }
             .title {
                 font-weight: normal;
                 line-height: 36px;
                 margin-top: -2px;
                 font-size: 1.6em;
-                font-weight: bolder;
                 margin-right: 70px !important;
+                color: #888;
             }
             .article-header-time {
                 position: absolute;
@@ -425,7 +377,6 @@ article {
             position: relative;
             margin-top: 15px;
             padding-top: 10px;
-            border-top: 1px solid #ddd;
             color: #999;
             font-size: .9em;
             line-height: 16px;
@@ -438,7 +389,6 @@ article {
                 }
                 a {
                     margin-right: 8px;
-                    // color: #999999;
                 }
             }
         }
@@ -477,6 +427,7 @@ article {
         font-size: 1.5em;
         border-bottom: 1px solid #ddd;
         font-weight: normal;
+        margin-bottom: 0px;
     }
     .widget-content {
         padding-right: 5px;

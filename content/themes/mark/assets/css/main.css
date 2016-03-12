@@ -185,8 +185,6 @@ th {
   /* Safari */
 }
 /* 主色调 */
-/* 字体 */
-/** 字体设置 */
 /* 链接样式 */
 a {
   color: #d35c5c !important;
@@ -203,19 +201,18 @@ a {
 }
 a:hover {
   color: #21272d;
+  text-decoration: none;
 }
 a:active {
   outline: none;
+  text-decoration: none;
 }
-/** 横线样式 */
-hr {
-  border: none;
-  height: 1px;
-  margin: 0;
-  padding: 0;
-  background-color: #e5e5e5;
+a:link {
+  text-decoration: none;
 }
-/** 按钮样式 */
+a:visited {
+  text-decoration: none;
+}
 h1,
 h2,
 h3,
@@ -279,7 +276,6 @@ body > header {
   width: 1080px;
   margin: 20px auto 35px auto;
 }
-/** 属性重置 */
 html {
   line-height: 1;
 }
@@ -323,15 +319,9 @@ summary {
   display: block;
 }
 body {
-  height: 100%;
-  max-height: 100%;
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.75em;
   -webkit-font-smoothing: antialiased;
   text-shadow: 0 0 1px transparent;
   color: #21272d;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 /* 选中色 */
 body::-webkit-selection,
@@ -484,12 +474,12 @@ article.paper .article-header,
 article.list .article-header {
   color: #888;
 }
-article.paper .article-header .fa,
-article.list .article-header .fa {
+article.paper .article-header .icon,
+article.list .article-header .icon {
   width: 32px;
   height: 32px;
-  margin-right: 25px;
   color: #888;
+  font-size: 30px;
 }
 article.paper .article-header .title,
 article.list .article-header .title {
@@ -497,8 +487,8 @@ article.list .article-header .title {
   line-height: 36px;
   margin-top: -2px;
   font-size: 1.6em;
-  font-weight: bolder;
   margin-right: 70px !important;
+  color: #888;
 }
 article.paper .article-header .article-header-time,
 article.list .article-header .article-header-time {
@@ -608,7 +598,6 @@ article.list .article-footer {
   position: relative;
   margin-top: 15px;
   padding-top: 10px;
-  border-top: 1px solid #ddd;
   color: #999;
   font-size: .9em;
   line-height: 16px;
@@ -652,6 +641,7 @@ article.list {
   font-size: 1.5em;
   border-bottom: 1px solid #ddd;
   font-weight: normal;
+  margin-bottom: 0px;
 }
 #sidebar .widget-content {
   padding-right: 5px;

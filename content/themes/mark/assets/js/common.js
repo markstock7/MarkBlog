@@ -204,7 +204,6 @@ mySite.initSubtitles = function initSubtitle(scrollSpy) {
 };
 
 mySite.initDuoShuo = function initDuoShuo() {
-    var duoshuoQuery = {short_name:"marstockblog"};
     setTimeout(function() {
         // 延迟2秒
         var ds = document.createElement('script');
@@ -213,5 +212,5 @@ mySite.initDuoShuo = function initDuoShuo() {
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    }, 2000);
+    }, 0);
 }
