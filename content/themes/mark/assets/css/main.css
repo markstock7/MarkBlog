@@ -374,7 +374,6 @@ article.list .article-content {
   text-align: justify;
   line-height: 1.6;
   word-break: break-all;
-  word-wrap: break-word;
   color: #666666;
 }
 article.paper .article-content img,
@@ -487,6 +486,7 @@ code {
   font-weight: 300;
   font-family: Menlo, monospace;
   font-size: 1.0em;
+  padding-left: 25px !important;
 }
 code span {
   font-weight: bold;

@@ -126,17 +126,20 @@ mySite.initGo2Top = function initGo2Top() {
 
 mySite.initCodeStyle = function initCodeStyle() {
     hljs.initHighlightingOnLoad();
-    $('pre code').each(function(){
-        var lines = $(this).text().split('\n').length - 1;
-        var $numbering = $('<ul/>').addClass('pre-numbering');
-        $(this)
-            .addClass('has-numbering')
-            .parent()
-            .append($numbering);
-        for(i=1;i<=lines;i++){
-            $numbering.append($('<li/>').text(i));
-        }
+    $('pre code').each(function() {
+        $(this).text($.trim($(this).text()));
     });
+    // $('pre code').each(function(){
+    //     var lines = $(this).text().split('\n').length - 1;
+    //     var $numbering = $('<ul/>').addClass('pre-numbering');
+    //     $(this)
+    //         .addClass('has-numbering')
+    //         .parent()
+    //         .append($numbering);
+    //     for(i=1;i<=lines;i++){
+    //         $numbering.append($('<li/>').text(i));
+    //     }
+    // });
 }
 
 mySite.initScrollLoad = function initScrollLoad($waterfall) {
